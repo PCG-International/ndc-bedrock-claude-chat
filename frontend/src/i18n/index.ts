@@ -2,6 +2,7 @@ import i18next from 'i18next';
 import detector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 import en from './en';
+import gr from './gr';
 import ja from './ja';
 import ko from './ko';
 import es from './es';
@@ -20,66 +21,71 @@ export const LANGUAGES: {
   value: string;
   label: string;
 }[] = [
-  {
-    value: 'en',
-    label: 'English',
-  },
-  {
-    value: 'de',
-    label: 'Deutsch',
-  },
-  {
-    value: 'fr',
-    label: 'Français',
-  },
-  {
-    value: 'es',
-    label: 'Español',
-  },
-  {
-    value: 'ja',
-    label: '日本語',
-  },
-  {
-    value: 'ko',
-    label: '한국어',
-  },
-  {
-    value: 'zhhans',
-    label: '中文 (简体)',
-  },
-  {
-    value: 'zhhant',
-    label: '中文 (繁體)',
-  },
-  {
-    value: 'it',
-    label: 'Italian',
-  },
-  {
-    value: 'nb',
-    label: 'Norsk (Bokmål)',
-  },
-  {
-    value: 'th',
-    label: 'ไทย',
-  },
-  {
-    value: 'id',
-    label: 'Bahasa Indonesia',
-  },
-  {
-    value: 'ms',
-    label: 'Bahasa Melayu',
-  },
-  {
-    value: 'vi',
-    label: 'Tiếng Việt',
-  },
-];
+    {
+      value: 'en',
+      label: 'English',
+    },
+    {
+      value: 'de',
+      label: 'Deutsch',
+    },
+    {
+      value: 'fr',
+      label: 'Français',
+    },
+    {
+      value: 'es',
+      label: 'Español',
+    },
+    {
+      value: 'ja',
+      label: '日本語',
+    },
+    {
+      value: 'ko',
+      label: '한국어',
+    },
+    {
+      value: 'zhhans',
+      label: '中文 (简体)',
+    },
+    {
+      value: 'zhhant',
+      label: '中文 (繁體)',
+    },
+    {
+      value: 'it',
+      label: 'Italian',
+    },
+    {
+      value: 'nb',
+      label: 'Norsk (Bokmål)',
+    },
+    {
+      value: 'th',
+      label: 'ไทย',
+    },
+    {
+      value: 'id',
+      label: 'Bahasa Indonesia',
+    },
+    {
+      value: 'ms',
+      label: 'Bahasa Melayu',
+    },
+    {
+      value: 'vi',
+      label: 'Tiếng Việt',
+    },
+    {
+      value: 'gr',
+      label: 'Ελληνικά',
+    }
+  ];
 
 const resources = {
   en,
+  gr,
   de,
   fr,
   es,

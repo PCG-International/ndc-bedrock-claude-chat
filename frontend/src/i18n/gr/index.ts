@@ -2,18 +2,18 @@ const translation = {
   translation: {
     signIn: {
       button: {
-        login: 'Login',
+        login: 'Σύνδεση',
       },
     },
     app: {
-      name: 'EKT GenAI Assistant',
-      nameWithoutClaude: 'EKT GenAI Assistant',
-      inputMessage: 'Can I Help You?',
-      starredBots: 'Starred Bots',
-      recentlyUsedBots: 'Recently Used Bots',
-      conversationHistory: 'History',
+      name: 'Bedrock Claude Chat',
+      nameWithoutClaude: 'Bedrock Chat',
+      inputMessage: 'Πληκτρολογήστε το μήνυμά σας',
+      starredBots: 'Αγαπημένα',
+      recentlyUsedBots: 'Πρόσφατα',
+      conversationHistory: 'Ιστορικό',
       chatWaitingSymbol: '▍',
-      adminConsoles: 'Admin Only',
+      adminConsoles: 'Διαχείριση',
     },
     model: {
       'claude-v3-haiku': {
@@ -437,15 +437,15 @@ How would you categorize this email?`,
       },
     },
     deleteDialog: {
-      title: 'Delete?',
-      content: 'Are you sure to delete <Bold>{{title}}</Bold>?',
+      title: 'Διαγραφή;',
+      content: 'Επιβεβαίωση διαγραφής <Bold>{{title}}</Bold>',
     },
     clearDialog: {
-      title: 'Delete ALL?',
-      content: 'Are you sure to delete ALL conversations?',
+      title: 'Διαγραφή όλων;',
+      content: 'Επιβεβαίωση διαγραφής όλων των συνομιλιών',
     },
     languageDialog: {
-      title: 'Switch language',
+      title: 'Γλώσσα',
     },
     feedbackDialog: {
       title: 'Feedback',

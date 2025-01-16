@@ -77,79 +77,79 @@ const useModel = (botId?: string | null, activeModels?: ActiveModels) => {
   >(() => {
     return !MISTRAL_ENABLED
       ? [
-          {
-            modelId: 'claude-v3-haiku',
-            label: t('model.claude-v3-haiku.label'),
-            description: t('model.claude-v3-haiku.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'claude-v3.5-haiku',
-            label: t('model.claude-v3.5-haiku.label'),
-            description: t('model.claude-v3.5-haiku.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'claude-v3-sonnet',
-            label: t('model.claude-v3-sonnet.label'),
-            description: t('model.claude-v3-sonnet.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'claude-v3.5-sonnet',
-            label: t('model.claude-v3.5-sonnet.label'),
-            description: t('model.claude-v3.5-sonnet.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'claude-v3.5-sonnet-v2',
-            label: t('model.claude-v3.5-sonnet-v2.label'),
-            description: t('model.claude-v3.5-sonnet-v2.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'claude-v3-opus',
-            label: t('model.claude-v3-opus.label'),
-            description: t('model.claude-v3-opus.description'),
-            supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
-          },
-          // New Amazon Nova models
-          {
-            modelId: 'amazon-nova-pro',
-            label: t('model.amazon-nova-pro.label'),
-            description: t('model.amazon-nova-pro.description'),
-            supportMediaType: NOVA_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'amazon-nova-lite',
-            label: t('model.amazon-nova-lite.label'),
-            description: t('model.amazon-nova-lite.description'),
-            supportMediaType: NOVA_SUPPORTED_MEDIA_TYPES,
-          },
-          {
-            modelId: 'amazon-nova-micro',
-            label: t('model.amazon-nova-micro.label'),
-            description: t('model.amazon-nova-micro.description'),
-            supportMediaType: [],
-          },
-        ]
+        // {
+        //   modelId: 'claude-v3-haiku',
+        //   label: t('model.claude-v3-haiku.label'),
+        //   description: t('model.claude-v3-haiku.description'),
+        //   supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        // },
+        {
+          modelId: 'claude-v3.5-haiku',
+          label: t('model.claude-v3.5-haiku.label'),
+          description: t('model.claude-v3.5-haiku.description'),
+          supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        },
+        // {
+        //   modelId: 'claude-v3-sonnet',
+        //   label: t('model.claude-v3-sonnet.label'),
+        //   description: t('model.claude-v3-sonnet.description'),
+        //   supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        // },
+        // {
+        //   modelId: 'claude-v3.5-sonnet',
+        //   label: t('model.claude-v3.5-sonnet.label'),
+        //   description: t('model.claude-v3.5-sonnet.description'),
+        //   supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        // },
+        {
+          modelId: 'claude-v3.5-sonnet-v2',
+          label: t('model.claude-v3.5-sonnet-v2.label'),
+          description: t('model.claude-v3.5-sonnet-v2.description'),
+          supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        },
+        // {
+        //   modelId: 'claude-v3-opus',
+        //   label: t('model.claude-v3-opus.label'),
+        //   description: t('model.claude-v3-opus.description'),
+        //   supportMediaType: CLAUDE_SUPPORTED_MEDIA_TYPES,
+        // },
+        // New Amazon Nova models
+        {
+          modelId: 'amazon-nova-pro',
+          label: t('model.amazon-nova-pro.label'),
+          description: t('model.amazon-nova-pro.description'),
+          supportMediaType: NOVA_SUPPORTED_MEDIA_TYPES,
+        },
+        // {
+        //   modelId: 'amazon-nova-lite',
+        //   label: t('model.amazon-nova-lite.label'),
+        //   description: t('model.amazon-nova-lite.description'),
+        //   supportMediaType: NOVA_SUPPORTED_MEDIA_TYPES,
+        // },
+        // {
+        //   modelId: 'amazon-nova-micro',
+        //   label: t('model.amazon-nova-micro.label'),
+        //   description: t('model.amazon-nova-micro.description'),
+        //   supportMediaType: [],
+        // },
+      ]
       : [
-          {
-            modelId: 'mistral-7b-instruct',
-            label: t('model.mistral-7b-instruct.label'),
-            supportMediaType: [],
-          },
-          {
-            modelId: 'mixtral-8x7b-instruct',
-            label: t('model.mixtral-8x7b-instruct.label'),
-            supportMediaType: [],
-          },
-          {
-            modelId: 'mistral-large',
-            label: t('model.mistral-large.label'),
-            supportMediaType: [],
-          },
-        ];
+        {
+          modelId: 'mistral-7b-instruct',
+          label: t('model.mistral-7b-instruct.label'),
+          supportMediaType: [],
+        },
+        {
+          modelId: 'mixtral-8x7b-instruct',
+          label: t('model.mixtral-8x7b-instruct.label'),
+          supportMediaType: [],
+        },
+        {
+          modelId: 'mistral-large',
+          label: t('model.mistral-large.label'),
+          supportMediaType: [],
+        },
+      ];
   }, [t]);
 
   const [filteredModels, setFilteredModels] = useState(availableModels);
