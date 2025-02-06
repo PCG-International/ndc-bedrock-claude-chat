@@ -33,7 +33,7 @@ import { ActiveModels } from '../@types/bot';
 
 import { copyBotUrl } from '../utils/BotUtils';
 import { toCamelCase } from '../utils/StringUtils';
-import { produce } from 'immer';
+import { applyPatches, produce } from 'immer';
 import ButtonIcon from '../components/ButtonIcon';
 import StatusSyncBot from '../components/StatusSyncBot';
 import Alert from '../components/Alert';
@@ -123,6 +123,7 @@ const ChatPage: React.FC = () => {
   } = useBotSummary(botId ?? undefined);
 
   const [pageTitle, setPageTitle] = useState('');
+  const [pageTitle2, setPageTitle2] = useState('');
   const [isAvailabilityBot, setIsAvailabilityBot] = useState(false);
 
   useEffect(() => {
@@ -130,12 +131,15 @@ const ChatPage: React.FC = () => {
     if (bot) {
       setIsAvailabilityBot(true);
       setPageTitle(bot.title);
+      setPageTitle2(t('app.name'));
     } else {
       setPageTitle(t('bot.label.normalChat'));
+      setPageTitle2(t('app.name'));
     }
     if (botError) {
       if (botError.response?.status === 404) {
         setPageTitle(t('bot.label.notAvailableBot'));
+        setPageTitle2(t('bot.label.notAvailableBot'));
       }
     }
   }, [bot, botError, t]);
@@ -162,10 +166,10 @@ const ChatPage: React.FC = () => {
   const inputBotParams = useMemo(() => {
     return botId
       ? {
-          botId: botId,
-          hasKnowledge: bot?.hasKnowledge ?? false,
-          hasAgent: bot?.hasAgent ?? false,
-        }
+        botId: botId,
+        hasKnowledge: bot?.hasKnowledge ?? false,
+        hasAgent: bot?.hasAgent ?? false,
+      }
       : undefined;
   }, [bot?.hasKnowledge, botId, bot?.hasAgent]);
 
@@ -439,12 +443,15 @@ const ChatPage: React.FC = () => {
       onDragEnd={endDnd}>
       <div className="flex-1 overflow-hidden">
         <div className="sticky top-0 z-10 mb-1.5 flex h-14 w-full items-center justify-between border-b border-gray bg-aws-paper p-2">
-          <div className="flex w-full justify-between">
-            <div className="p-2">
+          <div className="flex w-full items-center justify-between">
+            <div className="p-2 flex items-center gap-4">
               <div className="mr-10 font-bold">{pageTitle}</div>
               <div className="text-xs font-thin text-dark-gray">
                 {description}
               </div>
+            </div>
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-bold">
+              {pageTitle2}
             </div>
 
             {isAvailabilityBot && (
@@ -517,9 +524,8 @@ const ChatPage: React.FC = () => {
                   {messages?.map((message, idx, array) => (
                     <div
                       key={idx}
-                      className={`${
-                        message.role === 'assistant' ? 'bg-aws-squid-ink/5' : ''
-                      }`}>
+                      className={`${message.role === 'assistant' ? 'bg-aws-squid-ink/5' : ''
+                        }`}>
                       <ChatMessageWithRelatedDocuments
                         chatContent={message}
                         isStreaming={postingMessage && idx + 1 === array.length}

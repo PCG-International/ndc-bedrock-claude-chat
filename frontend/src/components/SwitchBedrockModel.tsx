@@ -24,7 +24,7 @@ const SwitchBedrockModel: React.FC<Props> = (props) => {
       if (props.activeModels) {
         return (
           props.activeModels[
-            toCamelCase(model.modelId) as keyof ActiveModels
+          toCamelCase(model.modelId) as keyof ActiveModels
           ] === true
         );
       }
@@ -44,9 +44,8 @@ const SwitchBedrockModel: React.FC<Props> = (props) => {
         {() => (
           <>
             <Popover.Button
-              className={`${
-                props.className ?? ''
-              } group inline-flex w-auto whitespace-nowrap rounded border-aws-squid-ink/50 bg-aws-paper p-2 px-3 text-base hover:brightness-75`}>
+              className={`${props.className ?? ''
+                } group inline-flex w-auto whitespace-nowrap rounded border-aws-squid-ink/50 bg-aws-paper p-2 px-3 text-base hover:brightness-75`}>
               <div className="flex items-center justify-between text-xl font-bold text-dark-gray">
                 <span>{modelName}</span>
                 <PiCaretDown className="ml-2" />
