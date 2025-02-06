@@ -33,7 +33,7 @@ import { ActiveModels } from '../@types/bot';
 
 import { copyBotUrl } from '../utils/BotUtils';
 import { toCamelCase } from '../utils/StringUtils';
-import { applyPatches, produce } from 'immer';
+import { produce } from 'immer';
 import ButtonIcon from '../components/ButtonIcon';
 import StatusSyncBot from '../components/StatusSyncBot';
 import Alert from '../components/Alert';
